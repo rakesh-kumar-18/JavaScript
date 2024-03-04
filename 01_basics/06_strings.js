@@ -12,8 +12,8 @@ console.log(gitName.toUpperCase());
 console.log(fName.charAt(1));
 console.log(fName.indexOf("a"));
 
-const newFName = fName.substring(0, 3);
+const newFName = fName.substring(0, 3); // Negative index not allowed in substring() method.
 console.log(newFName);
 
-const newLName = lName.slice(0);
+const newLName = lName.slice(0); // Negative index allowed in slice method.
 console.log(newLName);
