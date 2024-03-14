@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+        body {
+            background-color: #414141;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="headings">
+        <h1 id="heading-1">Hello World!</h1>
+        <h2 id="heading-2">Hello World!</h2>
+        <h3 id="heading-3">Hello World!</h3>
+        <h4 id="heading-4">Hello World!</h4>
+        <h5 id="heading-5">Hello World!</h5>
+        <h6 id="heading-6">Hello World!</h6>
+        <a id="google" href="https://google.com" target="_blank">Google</a>
+    </div>
+    <script>
+        /******************** Some important topics of events to read ********************/
+
+        // type, timestamp, defaultPrevented
+        // target, toElement, srcElement, currentTarget
+        // clientX, clientY, screenX, screenY (IMP for Interviews)
+        // altKey, ctrlKey, shiftKey, keyCode(some unique code for each keyboard key)
+
+        // Event Propagation: Event bubbling(false), Event capturing(true)
+        // Third parameter of addEventListener():
+        // 1. true: event capturing (top to bottom)
+        // 2. false: event bubbling (bottom to top)
+
+        // document.getElementById("heading-1").addEventListener("click", (e) => {
+        //     alert("h1 clicked")
+        //     console.log(e);
+        // })
+
+        // document.getElementById("headings").addEventListener("click", () => {
+        //     console.log("headings clicked");
+        // })
+        // document.getElementById("heading-2").addEventListener("click", (e) => {
+        //     console.log("h2 clicked");
+        //     e.stopPropagation() // It will stop bubbling. (it will not go to the above element.)
+        // })
+
+        // document.getElementById("google").addEventListener("click", function (e) {
+        //     console.log("google clicked");
+        //     e.preventDefault(); // will prevent the default behaviour of 'a' tag (not open the google.com)
+        //     e.stopPropagation(); // will stop bubbling (not execute the line:42)
+        // })
+
+        /* Removing Element By Clicking On It */
+        document.getElementById("headings").addEventListener("click", function (e) {
+            console.log(e.target);
+            let removeIt = e.target;
+            if (removeIt.tagName !== "DIV") {
+                removeIt.remove()
+            }
+        })
+    </script>
+</body>
+
+</html>
