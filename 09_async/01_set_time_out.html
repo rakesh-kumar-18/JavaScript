@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SET TIME OUT</title>
+    <style>
+        body {
+            background-color: #424242;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Rakesh Kumar Sahoo</h1>
+    <button id="stop">stop</button>
+    <script>
+        // setTimeout(() => {
+        //     console.log("hello world");
+        // }, 3000);
+
+        const changeName = function () {
+            document.querySelector("h1").innerText = "JAVASCRIPT"
+        }
+
+        const ref = setTimeout(changeName, 3000)
+
+        // Not benificial (It will stop immediately. It good to attach it to an event)
+        // clearTimeout(ref)
+
+        document.querySelector("#stop").addEventListener("click", function () {
+            clearTimeout(ref)
+            console.log("STOPPED");
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SET TIME OUT</title>
+    <style>
+        body {
+            background-color: #424242;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Rakesh Kumar Sahoo</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        const changeText = function () {
+            console.log("Rakesh");
+        }
+
+        document.querySelector("#start").addEventListener("click", function () {
+            setInterval(changeText, 3000)
+            console.log("Start");
+        })
+
+        document.querySelector("#stop").addEventListener("click", function () {
+            clearInterval()
+            console.log("Stop");
+        })
+    </script>
+</body>
+
+</html>
