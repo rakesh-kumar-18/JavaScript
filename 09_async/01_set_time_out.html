@@ -27,7 +27,7 @@
 
         const ref = setTimeout(changeName, 3000)
 
-        // Not benificial (It will stop immediately. It good to attach it to an event)
+        // Direct use of 'clearTimeout' not benificial (It will stop immediately. It good to attach it to an event)
         // clearTimeout(ref)
 
         document.querySelector("#stop").addEventListener("click", function () {
