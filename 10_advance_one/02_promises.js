@@ -35,12 +35,14 @@ const promiseThree = new Promise(function (resolve, reject) {
     }, 1000)
 })
 
-promiseThree.then(function (user) {
-    console.log(user);
-    console.log(typeof user);
-}).catch(function (message) {
-    console.log(message);
-})
+promiseThree
+    .then(function (user) {
+        console.log(user);
+        console.log(typeof user);
+    })
+    .catch(function (message) {
+        console.log(message);
+    })
 
 // Conditional based resolve and reject (Use of '.then' chaining and '.finally')
 const promiseFour = new Promise(function (resolve, reject) {
@@ -55,16 +57,20 @@ const promiseFour = new Promise(function (resolve, reject) {
 })
 
 /***** In '.then' chaining we have access to those variable that are returned in the previous '.then' method *****/
-promiseFour.then(function (user) {
-    console.log(user);
-    return user.username
-}).then(function (name) {
-    console.log(name);  // '.then' chaining
-}).catch(function (error) {
-    console.log(error);
-}).finally(function () {
-    console.log("Promise is either resolved or rejected"); // It will run independent of promise result
-})
+promiseFour
+    .then(function (user) {
+        console.log(user);
+        return user.username
+    })
+    .then(function (name) {
+        console.log(name);  // '.then' chaining
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+    .finally(function () {
+        console.log("Promise is either resolved or rejected"); // It will run independent of promise result
+    })
 
 // Different way of handling promise (async, await)
 const promiseFive = new Promise(function (resolve, reject) {
@@ -114,10 +120,13 @@ async function getUserDetails() {
 // getUserDetails()
 
 // Using of fetch with '.then', '.catch'
-fetch('https://api.github.com/users/rakesh-kumar-18').then(function (response) {
-    return response.json()
-}).then(function (data) {
-    console.log(data);
-}).catch(function (error) {
-    console.log(error);
-})
+fetch('https://api.github.com/users/rakesh-kumar-18')
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        console.log(data);
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
